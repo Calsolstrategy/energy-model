@@ -23,15 +23,18 @@ power=0
 accel=0
 #f1 = open('2016_10_15_14_12_11.log', 'r')
 #csvfile = open('coast1.csv', 'w')
-path = '/home/matthew/Desktop/CALSOL/vacaville_datalogger_files/*.log'
-files = glob.glob(path)
-csvfile = open('road_test_data.csv', 'w')
-csvwriter = csv.writer(csvfile)
-csvwriter.writerow(['time', 'rpm', 'mph', 'voltage', 'current', 'power', 'accel pedal'])
-index = 0
-total = 0
-frequency = 10 # record every nth line
-for file in files:
+
+#Parses through the files indicated through the path.
+def data_parser(path):
+    path += '*.log'
+    files = glob.glob(path)
+    csvfile = open('road_test_data.csv', 'w')
+    csvwriter = csv.writer(csvfile)
+    csvwriter.writerow(['time', 'rpm', 'mph', 'voltage', 'current', 'power', 'accel pedal'])
+    index = 0
+    total = 0
+    frequency = 10 # record every nth line
+    for file in files:
     f1 = open(file, 'r')
     print(file)
     index2 = 0
@@ -64,5 +67,7 @@ for file in files:
             accel=to_float(t[2][10:])
     f1.close()
     index+=1
-print(str(total) + " lines")
-print(str(index) + " files")
+    print(str(total) + " lines")
+    print(str(index) + " files")
+
+data_parser('/home/matthew/Desktop/CALSOL/vacaville_datalogger_files/')

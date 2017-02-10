@@ -2,9 +2,7 @@ This is the Strategy Project for UC Berkeley's Solar Car Team.
 
   Current Terms: Fall 2016, Spring 2017
 
-  Contributors: Jason Lum, Andrew Kim 
-  
-  Active Contributors: Matthew Turney, Neha Kunjal, Sarah Sun
+  Contributors: Matthew Turney, Jason Lum, Andrew Kim, Neha Kunjal, Sarah Sun, Elaine Chien
 
 This project mainly focuses on accurately predicting and modeling the energy state of the solar car when driving.
 
